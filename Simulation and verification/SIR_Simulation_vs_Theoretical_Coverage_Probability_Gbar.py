@@ -15,15 +15,15 @@ ra = 550e3                  # satellite altitude [m]
 rS = rE + ra                # orbital sphere radius
 
 # Monte Carlo iterations
-n_iter = 10000
+n_iter = 15000
 
 # PPP density
 mu = 190                    # average number of satellites on sphere
 lambda_ = mu / (4 * np.pi * rS**2)
 
 # SIR thresholds
-tau_dB = np.linspace(-10, 20, 30)
-tau = 10**(tau_dB / 10)
+gamma_dB = np.linspace(-10, 20, 30)
+gamma = 10**(gamma_dB / 10)
 
 # Path-loss exponent
 alpha = 2
@@ -103,13 +103,13 @@ def f_R_conditional(r, lambda_, rS, rE):
 # MONTE CARLO SIR SIMULATION
 # =========================================================
 
-def simulate_SIR(lambda_, rS, rE, tau, n_iter):
+def simulate_SIR(lambda_, rS, rE, gamma, n_iter):
 
     results = []
 
     user = np.array([0, 0, rE])
 
-    for t in tqdm(tau):
+    for t in tqdm(gamma):
 
         count = 0
 
@@ -196,14 +196,14 @@ def laplace_interference(s, r):
 # (Corollary 1, m = 1)
 # =========================================================
 
-def sir_coverage_theory(tau):
+def sir_coverage_theory(gamma):
 
     # Probability at least one visible satellite exists
     P_visible = 1 - np.exp(-lambda_ * area_cap)
 
     def integrand(r):
 
-        s = tau * r**alpha
+        s = gamma * r**alpha
 
         return (
             laplace_interference(s, r)
@@ -230,7 +230,7 @@ sir_sim = simulate_SIR(
     lambda_,
     rS,
     rE,
-    tau,
+    gamma,
     n_iter
 )
 
@@ -238,7 +238,7 @@ print("Computing theory...")
 
 sir_theory = np.array([
     sir_coverage_theory(t)
-    for t in tau
+    for t in gamma
 ])
 
 # =========================================================
@@ -258,7 +258,7 @@ print("\nMaximum absolute error:", max_error)
 plt.figure(figsize=(7,5))
 
 plt.scatter(
-    tau_dB,
+    gamma_dB,
     sir_sim,
     color='red',
     s=25,
@@ -266,16 +266,16 @@ plt.scatter(
 )
 
 plt.plot(
-    tau_dB,
+    gamma_dB,
     sir_theory,
     color='blue',
     linewidth=2,
     label='Theory'
 )
 
-plt.xlabel(r"$\tau$ [dB]", fontsize=12)
+plt.xlabel(r"$\gamma$ [dB]", fontsize=12)
 
-plt.ylabel(r"$P(\mathrm{SIR} > \tau)$", fontsize=12)
+plt.ylabel(r"$P(\mathrm{SIR} > \gamma)$", fontsize=12)
 
 plt.grid(True, linestyle='--', alpha=0.5)
 
@@ -283,6 +283,6 @@ plt.legend()
 
 plt.tight_layout()
 
-plt.savefig("PPP_SIR_paper_match.pdf")
+plt.savefig("PPP_SIR_Comparison.pdf")
 
 plt.show()
