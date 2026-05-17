@@ -15,15 +15,15 @@ ra = 550e3
 rS = rE + ra
 
 # Monte Carlo
-n_iter = 10000
+n_iter = 15000
 
 # PPP
 mu = 190
 lambda_ = mu / (4 * np.pi * rS**2)
 
 # Thresholds
-tau_dB = np.linspace(-10, 20, 30)
-tau = 10**(tau_dB / 10)
+gamma_dB = np.linspace(-10, 20, 30)
+gamma = 10**(gamma_dB / 10)
 
 # Path-loss exponent
 alpha = 2
@@ -33,7 +33,7 @@ alpha = 2
 # =========================
 
 Pt = 10**(30/10) / 1000   # 1 W
-g = 10**(20/10)           # 100
+g = 10**(20/10)           # 100 (this is the G_tG_r from the report)
 
 f = 2e9
 c = 3e8
@@ -76,13 +76,13 @@ def sample_satellites(lambda_, rS):
 # MONTE CARLO SIMULATION
 # =========================
 
-def simulate_coverage(lambda_, rS, rE, tau, n_iter):
+def simulate_coverage(lambda_, rS, rE, gamma, n_iter):
 
     results = []
     user = np.array([0, 0, rE])
     R_max = np.sqrt(rS**2 - rE**2)
 
-    for t in tqdm(tau):
+    for t in tqdm(gamma):
         count = 0
 
         for _ in range(n_iter):
@@ -140,12 +140,12 @@ def f_R_conditional(r, lambda_, rS, rE, R_min, R_max):
 # THEORETICAL SNR COVERAGE
 # =========================
 
-def snr_coverage_theory(tau):
+def snr_coverage_theory(gamma):
 
     P_visible = 1 - np.exp(-lambda_ * area_cap)
 
     def integrand(r):
-        return np.exp(-tau * sigma2 * r**alpha / (Pt * g * K)) * \
+        return np.exp(-gamma * sigma2 * r**alpha / (Pt * g * K)) * \
                f_R_conditional(r, lambda_, rS, rE, R_min, R_max)
 
     integral, _ = quad(integrand, R_min, R_max, limit=100)
@@ -158,10 +158,10 @@ def snr_coverage_theory(tau):
 # =========================
 
 print("Running Monte Carlo simulation...")
-snr_results = simulate_coverage(lambda_, rS, rE, tau, n_iter)
+snr_results = simulate_coverage(lambda_, rS, rE, gamma, n_iter)
 
 print("Computing theoretical curve...")
-snr_theory = np.array([snr_coverage_theory(t) for t in tau])
+snr_theory = np.array([snr_coverage_theory(t) for t in gamma])
 
 # =========================
 # ERROR ANALYSIS
@@ -184,13 +184,13 @@ print("Maximum absolute error (SNR):", max_error)
 # =========================
 
 plt.figure()
-plt.scatter(tau_dB, snr_results, color='red', s=20, label='Simulation')
-plt.plot(tau_dB, snr_theory, color='blue', linewidth=2, label='Theory')
+plt.scatter(gamma_dB, snr_results, color='red', s=20, label='Simulation')
+plt.plot(gamma_dB, snr_theory, color='blue', linewidth=2, label='Theory')
 
-plt.xlabel(r"$\tau$ [dB]")
-plt.ylabel(r"$P(\mathrm{SNR} > \tau)$")
+plt.xlabel(r"$\gamma$ [dB]")
+plt.ylabel(r"$P(\mathrm{SNR} > \gamma)$")
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.legend()
 
-plt.savefig("PPP_SNR_comparison_corrected.pdf")
+plt.savefig("PPP_SNR_Comparison.pdf")
 plt.show()
