@@ -183,7 +183,7 @@ print("Maximum absolute error (SNR):", max_error)
 # PLOT
 # =========================
 
-plt.figure()
+plt.figure(figsize=(7,5))
 plt.scatter(gamma_dB, snr_results, color='red', s=20, label='Simulation')
 plt.plot(gamma_dB, snr_theory, color='blue', linewidth=2, label='Theory')
 
@@ -191,6 +191,6 @@ plt.xlabel(r"$\gamma$ [dB]")
 plt.ylabel(r"$P(\mathrm{SNR} > \gamma)$")
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.legend()
-
+plt.tight_layout()
 plt.savefig("PPP_SNR_Comparison.pdf")
 plt.show()
