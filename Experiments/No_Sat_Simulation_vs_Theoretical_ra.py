@@ -18,7 +18,7 @@ ra_values = [300e3, 550e3, 800e3, 1200e3, 2000e3]
 mu_values = np.linspace(60, 300, 20)
 
 # Monte Carlo iterations
-n_iter = 15
+n_iter = 15000
 
 # =========================
 # SAMPLE PPP ON SPHERE
