@@ -123,7 +123,7 @@ for ra in ra_values:
         mu_values,
         theory_results,
         linewidth=2,
-        label=rf"Theory ($r_a={ra/1e3:.0f}\,\mathrm{{km}}$)"
+        label=rf"Theory (Altitude$={altitude_values/1e3:.0f}\,\mathrm{{km}}$)"
     )
 
     # Plot simulation points
