@@ -18,7 +18,7 @@ ra_values = [300e3, 550e3, 800e3, 1200e3, 2000e3]
 mu_values = np.linspace(60, 300, 20)
 
 # Monte Carlo iterations
-n_iter = 15000
+n_iter = 15
 
 # =========================
 # SAMPLE PPP ON SPHERE
@@ -78,7 +78,7 @@ plt.figure(figsize=(8, 6))
 
 for ra in ra_values:
 
-    print(f"\nProcessing altitude ra = {ra/1e3:.0f} km")
+    print(f"\nProcessing altitude altitude = {ra/1e3:.0f} km")
 
     # Orbital radius
     rS = rE + ra
@@ -123,7 +123,7 @@ for ra in ra_values:
         mu_values,
         theory_results,
         linewidth=2,
-        label=rf"Theory (Altitude$={ra_values/1e3:.0f}\,\mathrm{{km}}$)"
+        label=rf"Theory (Altitude$={ra/1e3:.0f}\,\mathrm{{km}}$)"
     )
 
     # Plot simulation points
