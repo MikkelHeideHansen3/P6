@@ -120,6 +120,7 @@ plt.plot(
     mu_values,
     theory_results,
     linewidth=2,
+    color='blue',
     label="Theory",
     zorder=2
 )
