@@ -265,7 +265,7 @@ for ra in ra_values:
         gamma_dB,
         sir_theory,
         linewidth=2,
-        label=rf"Theory ($r_a={ra/1e3:.0f}\,\mathrm{{km}}$)"
+        label=rf"Theory (Altitude$={ra/1e3:.0f}\,\mathrm{{km}}$)"
     )
 
     # -------------------------
