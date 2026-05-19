@@ -53,7 +53,7 @@ fig = plt.figure(figsize=(8,8))
 ax = fig.add_subplot(111, projection='3d')
 
 # Earth (inner sphere)
-ax.plot_surface(xE, yE, zE, color='lightblue', alpha=0.3, linewidth=0)
+ax.plot_surface(xE, yE, zE, color='blue', alpha=0.1, linewidth=0)
 
 # Satellite sphere (wireframe)
 ax.plot_wireframe(xS, yS, zS, color='gray', alpha=0.3)
