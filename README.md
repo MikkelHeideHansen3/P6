@@ -17,12 +17,12 @@ pip install numpy scipy matplotlib skyfield tqdm requests
 
 The following Python modules are used throughout the project:
 
-- `numpy - 2.1.3`
-- `scipy - 1.14.1`
-- `matplotlib - 3.9.2`
-- `skyfield - 1.54`
-- `tqdm - 4.67.3`
-- `requests - 2.32.5`
+- `numpy - Version 2.1.3`
+- `scipy - Version 1.14.1`
+- `matplotlib - Version 3.9.2`
+- `skyfield - Version 1.54`
+- `tqdm - Version 4.67.3`
+- `requests - Version 2.32.5`
 - `datetime - standard library`
 - `collections - standard library`
 - `statistics - standard library`
