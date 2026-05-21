@@ -17,19 +17,19 @@ pip install numpy scipy matplotlib skyfield tqdm requests
 
 The following Python modules are used throughout the project:
 
-- `numpy`
-- `scipy`
-- `matplotlib`
-- `skyfield`
-- `tqdm`
-- `requests`
-- `datetime`
-- `collections`
-- `statistics`
-- `random`
-- `os`
+- `numpy - 2.1.3`
+- `scipy - 1.14.1`
+- `matplotlib - 3.9.2`
+- `skyfield - 1.54`
+- `tqdm - 4.67.3`
+- `requests - 2.32.5`
+- `datetime - standard library`
+- `collections - standard library`
+- `statistics - standard library`
+- `random - standard library`
+- `os - standard library`
 
-Tested with Python 3.11.
+Tested with Python 3.12.10
 
 # Reproducing Figures
 ## Chapter 5 – Simulation Setup and Verification
