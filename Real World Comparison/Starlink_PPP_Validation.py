@@ -31,7 +31,7 @@ elevation_mask_deg = 0
 reuse_range = 20
 
 num_realizations = 15000
-NUM_SNAPSHOTS = 50
+NUM_SNAPSHOTS = 500
 
 
 gamma_db = np.arange(-10, 21, 2)
@@ -276,18 +276,17 @@ ppp_tuned_cov = simulate_ppp_coverage(lambda_tuned)
 
 plt.figure(figsize=(7, 5))
 
-plt.plot(gamma_db, ppp_cov, 'bs--', label='PPP')
-plt.plot(gamma_db, starlink_cov, 'k*--', label='Starlink')
+plt.plot(gamma_db, ppp_cov, 'bs--', label=f'PPP($μ_c$={mu_target:.1f})')
+plt.plot(gamma_db, starlink_cov, 'k*--', label=f'Starlink($\\theta$={elevation_mask_deg}°)')
 
-plt.xlabel(r'$\gamma$ (dB)')
-plt.ylabel("Coverage Probability")
+plt.xlabel(r'SIR threshold $\gamma$ (dB)')
+plt.ylabel(r"P(SIR > $\gamma$)")
 plt.grid(True)
 plt.legend()
 plt.ylim([0, 1.05])
 
-plt.title(
-    rf"λ={lambda_ppp:.2e}, μ={mu_target:.1f}, mask={elevation_mask_deg}°"
-)
+#plt.title(
+#    rf"λ={lambda_ppp:.2e}, μ={mu_target:.1f}, mask={elevation_mask_deg}°")
 
 plt.tight_layout()
 plt.show()
@@ -296,18 +295,18 @@ plt.show()
 
 plt.figure(figsize=(7, 5))
 
-plt.plot(gamma_db, ppp_tuned_cov, 'bs--', color='r', label='PPP')
-plt.plot(gamma_db, starlink_cov, 'k*--', label='Starlink')
+plt.plot(gamma_db, ppp_tuned_cov, 'bs--', color='r', label=f'PPP($μ_c$={mu_target:.1f})')
+plt.plot(gamma_db, starlink_cov, 'k*--', label=f'Starlink($\\theta$={elevation_mask_deg}°)')
 
-plt.xlabel(r'$\gamma$ (dB)')
-plt.ylabel("Coverage Probability")
+plt.xlabel(r'SIR threshold $\gamma$ (dB)')
+plt.ylabel(r"P(SIR > $\gamma$)")
 plt.grid(True)
 plt.legend()
 plt.ylim([0, 1.05])
 
-plt.title(
-    rf"λ tuned with tuning_factor={tuning_factor:.2f}"
-)
+#plt.title(
+#    rf"λ tuned with tuning_factor={tuning_factor:.2f}"
+#)
 
 plt.tight_layout()
 plt.show()
