@@ -95,15 +95,13 @@ Tested with Python Version 3.12.10
   - `elevation = 25`
   - `tuning_factor = 0.95`
 
-
-## Appendix B
-- **Fig. B.1(a)**  
+- **Fig. 7.4(a)**  
   `Starlink_PPP_Validation.py`  
   Parameters:
   - `elevation = 40`
   - `tuning_factor = 0.6`
 
-- **Fig. B.1(b)**  
+- **Fig. 7.4(b)**  
   `Starlink_PPP_Validation.py`  
   Parameters:
   - `elevation = 40`
