@@ -273,7 +273,7 @@ plt.plot(
     label='Theory'
 )
 
-plt.xlabel(r"$\gamma$ [dB]", fontsize=12)
+plt.xlabel(r"SIR threshold $\gamma$ [dB]", fontsize=12)
 
 plt.ylabel(r"$P(\mathrm{SIR} > \gamma)$", fontsize=12)
 
