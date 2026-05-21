@@ -160,7 +160,7 @@ ax1.plot(
     x_poisson,
     poisson_expected,
     linewidth=2,
-    label=f'Poisson($\\mu$={mu:.2f})',
+    label=f'Poisson($\\mu_t$={mu:.2f})',
     color='tab:red',
 )
 
