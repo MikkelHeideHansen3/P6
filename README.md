@@ -23,13 +23,13 @@ The following Python modules are used throughout the project:
 - `skyfield - Version 1.54`
 - `tqdm - Version 4.67.3`
 - `requests - Version 2.32.5`
-- `datetime - standard library`
-- `collections - standard library`
-- `statistics - standard library`
-- `random - standard library`
-- `os - standard library`
+- `datetime - Standard library`
+- `collections - Standard library`
+- `statistics - Standard library`
+- `random - Standard library`
+- `os - Standard library`
 
-Tested with Python 3.12.10
+Tested with Python Version 3.12.10
 
 # Reproducing Figures
 ## Chapter 5 – Simulation Setup and Verification
