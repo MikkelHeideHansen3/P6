@@ -11,7 +11,7 @@ random.seed(42)
 aalborg = Topos(latitude_degrees=57.0488,
                 longitude_degrees=9.9217)
 
-elevation = 0
+elevation = 25
 
 # Hent satellitdata (Starlink)
 stations_url = 'https://celestrak.org/NORAD/elements/gp.php?GROUP=starlink&FORMAT=tle'
