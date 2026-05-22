@@ -39,7 +39,7 @@ def sample_satellites(lambda_, rS):
 
 
 # =========================
-# MONTE CARLO: P(Phi(A)=0)
+# MONTE CARLO
 # =========================
 
 def simulate_no_satellite(lambda_, rS, rE, n_iter):
@@ -105,7 +105,6 @@ for ra in ra_values:
         mc_results.append(p_mc)
 
         # Theory:
-        # P(Phi(A)=0) = exp(-lambda * A_cap)
         p_theory = np.exp(-lambda_ * A_cap)
         theory_results.append(p_theory)
 
@@ -135,7 +134,7 @@ for ra in ra_values:
     )
 
 # =========================
-# FINAL PLOT SETTINGS
+# PLOT
 # =========================
 
 plt.xlabel(r"$\mu$", fontsize=12)
