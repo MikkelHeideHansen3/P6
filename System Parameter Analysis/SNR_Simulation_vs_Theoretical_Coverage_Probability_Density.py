@@ -1,14 +1,3 @@
-"""
-SNR Coverage vs Threshold for Different Satellite Densities (mu)
-
-This script compares:
-1. Monte Carlo simulation
-2. Correct analytical theory
-
-for multiple values of the average number of satellites on the
-orbital sphere, mu.
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
@@ -26,7 +15,7 @@ ra = 550e3
 rS = rE + ra
 
 # Monte Carlo iterations
-n_iter = 15000   # Increase to 10000 for higher accuracy
+n_iter = 15000   
 
 # Values of mu to test
 mu_values = [50, 100, 190, 300, 500]
@@ -51,7 +40,7 @@ K = (c / (4 * np.pi * f)) ** 2
 
 k = 1.38e-23
 T = 290
-B = 1e5                        # 100 kHz
+B = 1e5                       
 
 sigma2 = k * T * B
 
@@ -261,7 +250,7 @@ for mu in mu_values:
     )
 
 # =========================================================
-# FINAL PLOT
+# PLOT
 # =========================================================
 
 plt.xlabel(r"SNR threshold $\gamma$ [dB]", fontsize=12)
