@@ -5,7 +5,7 @@ LEO Satellite Constellations"
 The repository is divided into three main sections:
 - `Simulation Setup and Verification`
 - `System Parameter Analysis`
-- `Real World Comparison`
+- `Empirical Comparison`
 
 
 # Requirements
