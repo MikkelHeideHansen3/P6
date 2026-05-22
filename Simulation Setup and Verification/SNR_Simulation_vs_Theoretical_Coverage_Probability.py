@@ -33,7 +33,7 @@ alpha = 2
 # =========================
 
 Pt = 10**(30/10) / 1000   # 1 W
-g = 10**(20/10)           # 100 (this is the G_tG_r from the report)
+g = 10**(20/10)           # 100 
 
 f = 2e9
 c = 3e8
@@ -114,7 +114,7 @@ def simulate_coverage(lambda_, rS, rE, gamma, n_iter):
 
 
 # =========================
-# CORRECT THEORETICAL PDF
+# THEORETICAL PDF
 # =========================
 
 def nu_lambda_RS(lambda_, rS, rE):
