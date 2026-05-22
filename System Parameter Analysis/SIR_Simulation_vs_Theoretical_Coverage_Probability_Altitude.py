@@ -1,14 +1,3 @@
-"""
-SIR Coverage vs Threshold for Different Satellite Altitudes (ra)
-
-This script evaluates:
-1. Monte Carlo simulation
-2. Analytical theory
-
-for multiple satellite altitudes while keeping the average number
-of satellites (mu) fixed.
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
@@ -147,7 +136,7 @@ def sir_coverage_theory(tau_value, lambda_, rS, rE,
 
 
 # =========================================================
-# MONTE CARLO SIR SIMULATION
+# MONTE CARLO 
 # =========================================================
 
 def simulate_SIR(lambda_, rS, rE, R_max, tau_array, n_iter):
@@ -279,7 +268,7 @@ for ra in ra_values:
     )
 
 # =========================================================
-# FINAL PLOT SETTINGS
+# PLOT
 # =========================================================
 
 plt.xlabel(r"SIR threshold $\gamma$ [dB]", fontsize=12)
