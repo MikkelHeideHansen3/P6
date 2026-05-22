@@ -59,7 +59,7 @@ def count_visible_satellites(t):
 
     return visible
 
-# Lav 200 snapshots og tæl synlige satellitter
+# Lav 500 snapshots og tæl synlige satellitter
 
 counts = []
 
@@ -91,26 +91,6 @@ for i in range(NUM_SNAPSHOTS):
         f"{visible_count} synlige satellitter"
     )
 
-"""
-print(statistics.mean(counts))
-# Histogram / pindediagram
-
-frequency = Counter(counts)
-
-x = sorted(frequency.keys())
-y = [frequency[val] for val in x]
-
-plt.figure(figsize=(10,6))
-plt.bar(x, y)
-
-plt.xlabel('Antal synlige satellitter i snapshot')
-plt.ylabel('Antal snapshots')
-plt.title('Fordeling af synlige satellitter over Aalborg')
-
-plt.grid(True)
-
-plt.show()
-"""
 
 #---------------------------------------------------
 #Poisson model
@@ -167,7 +147,7 @@ ax1.plot(
 ax1.set_xlabel('Number of visible satellites')
 ax1.set_ylabel('Number of snapshots', color='tab:blue')
 
-# Højre y-akse (kun label her)
+# Højre y-akse 
 ax2 = ax1.twinx()
 ax2.set_ylabel('Probability (Poisson)', color='tab:red')
 
