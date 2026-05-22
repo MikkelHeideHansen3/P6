@@ -52,10 +52,10 @@ xS, yS, zS = create_sphere(rS)
 fig = plt.figure(figsize=(8,8))
 ax = fig.add_subplot(111, projection='3d')
 
-# Earth (inner sphere)
+# Earth 
 ax.plot_surface(xE, yE, zE, color='blue', alpha=0.1, linewidth=0)
 
-# Satellite sphere (wireframe)
+# Satellite sphere 
 ax.plot_wireframe(xS, yS, zS, color='gray', alpha=0.3)
 
 # Satellites
