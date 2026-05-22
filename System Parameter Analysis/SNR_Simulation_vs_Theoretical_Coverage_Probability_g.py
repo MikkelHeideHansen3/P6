@@ -1,16 +1,3 @@
-"""
-SNR Coverage vs Threshold for Different Antenna Gains (g)
-
-This script compares:
-1. Monte Carlo simulation
-2. Correct analytical theory
-
-for multiple values of the desired-link antenna gain g,
-while keeping all other parameters fixed.
-
-Gain values are specified in dB and converted to linear scale.
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
@@ -56,7 +43,7 @@ K = (c / (4 * np.pi * f)) ** 2
 
 k = 1.38e-23
 T = 290
-B = 1e5                        # 100 kHz
+B = 1e5                        
 sigma2 = k * T * B
 
 # =========================================================
@@ -265,7 +252,7 @@ for g_dB in g_dB_values:
     )
 
 # =========================================================
-# FINAL PLOT
+# PLOT
 # =========================================================
 
 plt.xlabel(r"SNR threshold $\gamma$ [dB]", fontsize=12)
