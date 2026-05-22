@@ -32,11 +32,10 @@ alpha = 2
 m = 1
 
 # =========================================================
-# ANTENNA GAIN MODEL (PAPER)
+# ANTENNA GAIN MODEL 
 # =========================================================
 
 # Interferers are 10 dB weaker than desired signal
-# Paper uses G_bar = 0.1
 G_bar = 0.1
 
 # =========================================================
@@ -70,7 +69,6 @@ def sample_satellites(lambda_, rS):
 
 # =========================================================
 # CONDITIONAL DISTANCE PDF
-# (Lemma 2 in paper)
 # =========================================================
 
 def nu_lambda_RS(lambda_, rS, rE):
@@ -170,7 +168,6 @@ def simulate_SIR(lambda_, rS, rE, gamma, n_iter):
 
 # =========================================================
 # LAPLACE TRANSFORM OF INTERFERENCE
-# (Lemma 3 in paper)
 # =========================================================
 
 def laplace_interference(s, r):
@@ -193,7 +190,6 @@ def laplace_interference(s, r):
 
 # =========================================================
 # THEORETICAL SIR COVERAGE
-# (Corollary 1, m = 1)
 # =========================================================
 
 def sir_coverage_theory(gamma):
