@@ -1,5 +1,5 @@
 This repository contains the Python scripts used to generate the simulations, analyses, and figures presented for the bachelorproject "Coverage Analysis of
-LEO Satellite Constellations"
+LEO Satellite Constellations".
 
 # Repository Structure
 The repository is divided into three main sections:
