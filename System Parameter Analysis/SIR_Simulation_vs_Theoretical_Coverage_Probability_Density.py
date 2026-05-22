@@ -1,13 +1,3 @@
-"""
-SIR Coverage vs Threshold for Different Satellite Densities (mu)
-
-This script evaluates both:
-1. Monte Carlo simulation
-2. Analytical theory
-
-for multiple values of the average number of satellites on the orbital sphere.
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
@@ -257,7 +247,7 @@ for mu in mu_values:
     )
 
 # =========================================================
-# FINAL PLOT SETTINGS
+# PLOT
 # =========================================================
 
 plt.xlabel(r"SIR threshold $\gamma$ [dB]", fontsize=12)
