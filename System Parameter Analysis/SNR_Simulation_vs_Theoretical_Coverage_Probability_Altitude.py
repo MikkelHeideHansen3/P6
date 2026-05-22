@@ -1,14 +1,3 @@
-"""
-SNR Coverage vs Threshold for Different Satellite Altitudes (ra)
-
-This script compares:
-1. Monte Carlo simulation
-2. Correct analytical theory
-
-for multiple satellite altitudes while keeping the average number
-of satellites on the orbital sphere (mu) fixed.
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
@@ -30,7 +19,7 @@ ra_values = [300e3, 550e3, 800e3, 1200e3, 2000e3]
 mu = 190
 
 # Monte Carlo iterations
-n_iter = 15000   # Increase to 10000 for higher accuracy
+n_iter = 15000   
 
 # Thresholds
 gamma_dB = np.linspace(-10, 20, 30)
@@ -52,7 +41,7 @@ K = (c / (4 * np.pi * f)) ** 2
 
 k = 1.38e-23
 T = 290
-B = 1e5                        # 100 kHz
+B = 1e5                        
 sigma2 = k * T * B
 
 # =========================================================
@@ -263,7 +252,7 @@ for ra in ra_values:
     )
 
 # =========================================================
-# FINAL PLOT
+# PLOT
 # =========================================================
 
 plt.xlabel(r"SNR threshold $\gamma$ [dB]", fontsize=12)
