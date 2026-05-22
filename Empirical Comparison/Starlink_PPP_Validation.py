@@ -1,6 +1,5 @@
 # ============================================================
 # STARLINK + PPP COVERAGE PROBABILITY
-# MED REPRODUCERBARE RANDOM SNAPSHOTS
 # ============================================================
 
 import numpy as np
@@ -42,7 +41,7 @@ h = 550e3
 R_S = R_E + h
 
 # ============================================================
-# LOAD TLE (deterministisk fil anbefales også)
+# LOAD TLE 
 # ============================================================
 
 tle_url = "https://celestrak.org/NORAD/elements/gp.php?GROUP=starlink&FORMAT=tle"
@@ -75,7 +74,7 @@ def fading(N):
     return rng.exponential(1, N)
 
 # ============================================================
-# VISIBILITY FUNCTION (depends on global t)
+# VISIBILITY FUNCTION 
 # ============================================================
 
 def get_visible_distances(t):
@@ -285,8 +284,6 @@ plt.grid(True)
 plt.legend()
 plt.ylim([0, 1.05])
 
-#plt.title(
-#    rf"λ={lambda_ppp:.2e}, μ={mu_target:.1f}, mask={elevation_mask_deg}°")
 
 plt.tight_layout()
 plt.show()
@@ -303,10 +300,6 @@ plt.ylabel(r"P(SIR > $\gamma$)")
 plt.grid(True)
 plt.legend()
 plt.ylim([0, 1.05])
-
-#plt.title(
-#    rf"λ tuned with tuning_factor={tuning_factor:.2f}"
-#)
 
 plt.tight_layout()
 plt.show()
