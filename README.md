@@ -1,4 +1,4 @@
-This repository contains the Python scripts used to generate the simulations, analyses, and figures presented for the bachelorproject "Coverage Analysis of
+This repository contains the Python scripts used to generate the simulations, analyses, and figures presented for the Bachelor Project "Coverage Analysis of
 LEO Satellite Constellations".
 
 # Repository Structure
@@ -32,6 +32,7 @@ The following Python modules are used throughout the project:
 Tested with Python Version 3.12.10
 
 # Reproducing Figures
+Random seeds are specified within the scripts to ensure reproducibility of simulation results.
 ## Chapter 5 – Simulation Setup and Verification
 
 - **Fig. 5.1**  
@@ -106,3 +107,10 @@ Tested with Python Version 3.12.10
   Parameters:
   - `elevation = 40`
   - `tuning_factor = 0.6`
+
+# Running the Scripts
+
+All scripts can be executed directly from the command line:
+
+```bash
+python filename.py
