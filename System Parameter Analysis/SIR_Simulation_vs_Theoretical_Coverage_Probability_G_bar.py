@@ -1,19 +1,3 @@
-"""
-SIR Coverage vs Threshold for Different Interferer Antenna Gains (G_bar)
-
-This script evaluates:
-1. Monte Carlo simulation
-2. Analytical theory
-
-for multiple values of G_bar, while keeping all other parameters fixed.
-
-G_bar represents the relative antenna gain of interfering satellites.
-For example:
-    G_bar = 0.01  -> interferers are 20 dB weaker
-    G_bar = 0.1   -> interferers are 10 dB weaker
-    G_bar = 1.0   -> no attenuation of interferers
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
@@ -271,7 +255,7 @@ for G_bar in G_bar_values:
     )
 
 # =========================================================
-# FINAL PLOT SETTINGS
+# PLOT
 # =========================================================
 
 plt.xlabel(r"SIR threshold $\gamma$ [dB]", fontsize=12)
