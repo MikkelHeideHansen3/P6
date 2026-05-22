@@ -1,3 +1,4 @@
+# Coverage Analysis of LEO Satellite Constellations
 This repository contains the Python scripts used to generate the simulations, analyses, and figures presented for the Bachelor Project "Coverage Analysis of
 LEO Satellite Constellations".
 
